@@ -2,7 +2,7 @@ import { LojasController } from './lojas.controller';
 import { Module } from '@nestjs/common';
 import { LojasService } from './lojas.services';
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { Loja } from './lojas.entity'
+// import { Loja } from './loja.entity'
 
 @Module({
     imports: [TypeOrmModule.forFeature([])],
