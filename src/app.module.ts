@@ -2,12 +2,17 @@ import { LojasModule } from './lojas/lojas.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LojasController } from './lojas/lojas.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { typeOrmConfig } from 'config/typeorm.config';
 
 @Module({
   imports: [
-    LojasModule,],
-  controllers: [AppController, LojasController],
+    TypeOrmModule.forRoot({
+      ...typeOrmConfig
+    }),
+    LojasModule
+  ],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule { }
